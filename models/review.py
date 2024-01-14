@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 
 class review(BaseModel):
     """This is used to represent a review
-    
+
     Attributes:
         place_id: This is the id of the place
         user_id: This is the id of the use
