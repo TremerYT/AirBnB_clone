@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             "count": self.count,
             "update": self.update
         }
-        comp = re.search(r"\.", arguments)
+        comp = re.search(r"\.", arg)
         if comp is not None:
             argument_1 = [arg[:comp.span()[0]], arg[comp.span():]]
             comp = re.search(r"\((.*?)\)", argument_1[1])
@@ -135,7 +135,7 @@ class HBNBCommand(cmd.Cmd):
         This displays string representations of all instances of a class
         if no class is specified, it just displays all objjects"""
         arg_1 = tokenizer(arguments)
-        if len(arg_1) > 0 and argument_1[0] not in HBNBCommand.__classes:
+        if len(arg_1) > 0 and arg_1[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
             object_1 = []
@@ -191,7 +191,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 object.__dict__[argument_1[2]] = value_type(argument_1[3])
         elif type(eval(argument_1[2])) == dict:
-            object = ob_dict["{}.{}".format(argument_1[0], argument_1[1])]
+            object = objdict["{}.{}".format(argument_1[0], argument_1[1])]
             for i, j in eval(argument_1[2].items()):
                 if (i in object.__class__.__dict__.keys() and
                         type(object.__class__.__dict__[i]) in
