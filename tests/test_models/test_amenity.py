@@ -36,7 +36,7 @@ class TestAmenity(unittest.TestCase):
             "created_at": "2024-01-12T08:38:06.286695",
             "updated_at": "2024-01-12T08:38:06.288367"
         }
-        temp = self.amenity(**newIns)
+        temp = self.amenity(**newInstan)
         self.assertEqual(newInstan["id"], temp.id)
         self.assertEqual(dt.fromisoformat(
             newInstan["created_at"]), temp.created_at)
